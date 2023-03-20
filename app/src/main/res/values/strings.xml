@@ -9,6 +9,7 @@
     <string name="filter_section">Filtro</string>
     <string name="favorites_section">Favoritos</string>
     <string name="history_section">Historial</string>
+    <string name="history_title">Historial</string>
 
     <!-- Nombres comentarios -->
     <string name="comment_title">Comentarios</string>

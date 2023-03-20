@@ -12,6 +12,8 @@
     <color name="secondary_text_color">#424242</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+
+    <color name="gray">#000000</color>
     <!-- Definimos el color de los botones -->
     <color name="booking_blue">#2196F3</color>
     <color name="booking_white">#FFFFFF</color>

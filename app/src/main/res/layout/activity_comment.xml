@@ -81,7 +81,7 @@
                 android:textSize="16sp"
                 android:background="@drawable/button_background"
                 android:onClick="sendComment"
-                android:style="@style/BookingButtonStyle" />
+                android:style="@styles/BookingButtonStyle" />
 
 
         </LinearLayout>
