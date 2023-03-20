@@ -1,3 +1,36 @@
 <resources>
+    <!-- Textos comunes -->
     <string name="app_name">IBooking</string>
+    <string name="search_hint">Buscar hotel...</string>
+    <string name="no_results">No se encontraron resultados.</string>
+
+    <!-- Nombres de secciones -->
+    <string name="home_section">Inicio</string>
+    <string name="filter_section">Filtro</string>
+    <string name="favorites_section">Favoritos</string>
+    <string name="history_section">Historial</string>
+
+    <!-- Nombres comentarios -->
+    <string name="comment_title">Comentarios</string>
+    <string name="comment_form_title">Deja un comentario</string>
+    <string name="comment_name_hint">Tu nombre</string>
+    <string name="comment_email_hint">Tu correo electrónico</string>
+    <string name="comment_text_hint">Escribe tu comentario</string>
+    <string name="comment_send_button">Enviar</string>
+
+    <!-- Botones -->
+    <string name="search_button">Buscar</string>
+    <string name="filter_button">Filtrar</string>
+    <string name="clear_button">Limpiar</string>
+    <string name="view_details_button">Ver detalles</string>
+    <string name="add_favorite_button">Agregar a favoritos</string>
+    <string name="remove_favorite_button">Eliminar de favoritos</string>
+
+    <!-- Etiquetas -->
+    <string name="stars_label">Estrellas:</string>
+    <string name="price_range_label">Rango de precio:</string>
+
+    <!-- Mensajes de confirmación -->
+    <string name="add_favorite_confirmation">Hotel agregado a favoritos.</string>
+    <string name="remove_favorite_confirmation">Hotel eliminado de favoritos.</string>
 </resources>

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ismael.ibooking.Adapter.HotelsAdapter;
+import com.ismael.ibooking.Adapter.HotelAdapter;
 
 import com.ismael.ibooking.R;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public class HotelListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private HotelsAdapter adapter;
+    private HotelAdapter adapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -29,7 +29,7 @@ public class HotelListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //hotels traera la lista de hoteles del api
         List<Hotel> hotels;
-        adapter = new HotelsAdapter(hotels);
+        adapter = new HotelAdapter(hotels);
         recyclerView.setAdapter(adapter);
     }
 

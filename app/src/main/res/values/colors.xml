@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimaryDark">black</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Definimos el color de fondo de la aplicación como un tono de gris -->
+    <color name="background_color">#F5F5F5</color>
+    <!-- Definimos el color de acento que se usará en botones, títulos, etc. como un tono de naranja -->
+    <color name="accent_color">#FFA500</color>
+    <!-- Definimos el color de la barra de estado como el mismo color de acento, pero con una transparencia del 70% -->
+    <color name="status_bar_color">#B3FFA500</color>
+    <!-- Definimos el color de texto principal como negro -->
+    <color name="text_color">#000000</color>
+    <!-- Definimos el color de texto secundario, como descripciones o información adicional, como un tono de gris oscuro -->
+    <color name="secondary_text_color">#424242</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <!-- Definimos el color de los botones -->
+    <color name="booking_blue">#2196F3</color>
+    <color name="booking_white">#FFFFFF</color>
+    <color name="dark_blue">#00BFFF</color>
+    <color name="light_blue">#FFF0F5</color>
 </resources>

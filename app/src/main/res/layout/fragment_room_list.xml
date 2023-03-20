@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <!-- Encabezado de la lista de habitaciones -->
+    <TextView
+        android:id="@+id/room_list_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/room_list_header"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:background="@color/light_gray" />
+
+    <!-- Lista de habitaciones -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/room_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:scrollbars="vertical" />
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <!-- Título de la actividad -->
+    <TextView
+        android:id="@+id/comment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/comment_title"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Sección de comentarios -->
+    <LinearLayout
+        android:id="@+id/comment_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comment_title"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <!-- Formulario de comentario -->
+        <LinearLayout
+            android:id="@+id/comment_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Título del formulario -->
+            <TextView
+                android:id="@+id/comment_form_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/comment_form_title"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Campo de nombre -->
+            <EditText
+                android:id="@+id/comment_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/comment_name_hint"
+                android:inputType="textPersonName" />
+
+            <!-- Campo de correo electrónico -->
+            <EditText
+                android:id="@+id/comment_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/comment_email_hint"
+                android:inputType="textEmailAddress" />
+
+    <!-- Campo de comentario -->
+            <EditText
+                android:id="@+id/comment_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/comment_text_hint"
+                android:inputType="textMultiLine"
+                android:minLines="4" />
+
+            <!-- Botón de enviar comentario -->
+            <Button
+                android:id="@+id/comment_send_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/comment_send_button"
+                android:textSize="16sp"
+                android:background="@drawable/button_background"
+                android:onClick="sendComment"
+                android:style="@style/BookingButtonStyle" />
+
+
+        </LinearLayout>
+
+        <!-- Lista de comentarios -->
+        <ListView
+            android:id="@+id/comment_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:divider="@null"
+            android:dividerHeight="0dp" />
+    </LinearLayout>
+</RelativeLayout>
