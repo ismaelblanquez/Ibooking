@@ -1,5 +1,27 @@
 package com.ismael.ibooking.Activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ismael.ibooking.Api.APIUtils;
+import com.ismael.ibooking.Api.BookingAPI;
+import com.ismael.ibooking.Model.Pojo.Hotel;
+import com.ismael.ibooking.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class SearchActivity extends AppCompatActivity implements HotelAdapter.ItemClickListener {
     private EditText etSearch;
     private Button btnSearch;
@@ -13,7 +35,7 @@ public class SearchActivity extends AppCompatActivity implements HotelAdapter.It
         setContentView(R.layout.activity_search);
 
         etSearch = findViewById(R.id.etSearch);
-        btnSearch = findViewById(R.id.btnSearch);
+        btnSearch = findViewById(R.id.search_button);
         rvHotels = findViewById(R.id.rvHotels);
         rvHotels.setLayoutManager(new LinearLayoutManager(this));
 

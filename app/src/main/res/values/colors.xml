@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Definimos el color de fondo de la aplicación como un tono de gris -->
-    <color name="background_color">#F5F5F5</color>
+    <color name="background_color">#FFFFFF</color>
     <!-- Definimos el color de acento que se usará en botones, títulos, etc. como un tono de naranja -->
     <color name="accent_color">#FFA500</color>
     <!-- Definimos el color de la barra de estado como el mismo color de acento, pero con una transparencia del 70% -->
@@ -12,11 +12,17 @@
     <color name="secondary_text_color">#424242</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
-
+    <color name="overlay_color">#66000000</color>
+    <color name="colorPrimary">#3F51B5</color>
     <color name="gray">#000000</color>
     <!-- Definimos el color de los botones -->
     <color name="booking_blue">#2196F3</color>
+    <color name="favorite_button_color">#FF4081</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
     <color name="booking_white">#FFFFFF</color>
     <color name="dark_blue">#00BFFF</color>
     <color name="light_blue">#FFF0F5</color>
+    <color name="colorError">#FF0000</color>
+
 </resources>

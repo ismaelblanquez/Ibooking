@@ -3,6 +3,11 @@ package com.ismael.ibooking.Activities;
 import android.os.Bundle;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ismael.ibooking.R;
+import com.ismael.ibooking.Reservation;
+import com.ismael.ibooking.User;
+
 import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity {

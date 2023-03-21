@@ -1,3 +1,17 @@
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ismael.ibooking.Model.Pojo.Hotel;
+import com.ismael.ibooking.R;
+
+import java.util.List;
+
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHolder> {
 
     private List<Hotel> hotels;

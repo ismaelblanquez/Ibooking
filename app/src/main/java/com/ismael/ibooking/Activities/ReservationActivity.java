@@ -1,18 +1,31 @@
 package com.ismael.ibooking.Activities;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.ismael.ibooking.R;
+
 public class ReservationActivity extends AppCompatActivity {
 
-    private EditText nameEditText;
-    private EditText dateEditText;
+    private TextView nameEditText;
+    private TextView dateEditText;
     private Button confirmButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
 
-        nameEditText = findViewById(R.id.name_edit_text);
-        dateEditText = findViewById(R.id.date_edit_text);
+        nameEditText = findViewById(R.id.hotel_name);
+        dateEditText = findViewById(R.id.arrival_date);
         confirmButton = findViewById(R.id.confirm_button);
 
         confirmButton.setOnClickListener(new View.OnClickListener() {

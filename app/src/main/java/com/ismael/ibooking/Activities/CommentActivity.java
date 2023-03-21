@@ -1,6 +1,7 @@
 package com.ismael.ibooking.Activities;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -17,8 +18,8 @@ public class CommentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
 
-        commentEditText = findViewById(R.id.commentEditText);
-        submitButton = findViewById(R.id.submitButton);
+        commentEditText = findViewById(R.id.comment_text);
+        submitButton = findViewById(R.id.comment_send_button);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
