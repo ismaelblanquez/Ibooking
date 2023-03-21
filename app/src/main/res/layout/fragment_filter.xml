@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/spinner_background"
+        android:minHeight="48dp"
         android:spinnerMode="dropdown" />
 
     <!-- Selector de fecha -->
@@ -51,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/spinner_background"
+        android:minHeight="48dp"
         android:spinnerMode="dropdown" />
 
     <!-- Botón de aplicar filtros -->
@@ -61,6 +63,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_background"
+        android:backgroundTint="@color/DodgerBlue"
         android:text="@string/filter_button"
         android:textColor="@color/white" />
 </LinearLayout>

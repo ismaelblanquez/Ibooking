@@ -73,7 +73,14 @@
     <string name="loading_message">Cargando</string>
     <string name="error_message">Error</string>
 
+    <!-- Fragment Home -->
+    <string name="category_title">Categoría:</string>
+    <string name="featured_title">Destacado:</string>
+
+    <!-- Fragment room list -->
+    <string name="room_list_header">Lista de habitaciones:</string>
     <!-- Mensajes de confirmación -->
     <string name="add_favorite_confirmation">Hotel agregado a favoritos.</string>
     <string name="remove_favorite_confirmation">Hotel eliminado de favoritos.</string>
+    <string name="todo">TODO</string>
 </resources>

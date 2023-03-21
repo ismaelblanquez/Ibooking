@@ -21,7 +21,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_name"
-                android:inputType="textCapWords" />
+                android:inputType="textCapWords"
+                android:textColorHint="#78909C"
+                android:autofillHints="" />
 
             <!-- Campo de entrada de correo electrónico -->
             <EditText
@@ -31,7 +33,9 @@
                 android:layout_below="@id/input_name"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:hint="@string/hint_email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColorHint="#78909C"
+                android:autofillHints="" />
 
             <!-- Campo de entrada de contraseña -->
             <EditText
@@ -41,13 +45,16 @@
                 android:layout_below="@id/input_email"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:hint="@string/hint_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColorHint="#78909C"
+                android:autofillHints="" />
 
             <!-- Botón de registro -->
             <Button
                 android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/DodgerBlue"
                 android:layout_below="@id/input_password"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:text="@string/btn_register" />
@@ -59,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btn_register"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textColor="@color/Black"
                 android:text="@string/link_login"
                 android:textAlignment="center"
                 android:textSize="16sp" />

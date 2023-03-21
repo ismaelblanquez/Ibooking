@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.ismael.ibooking.R;
+
 public class HomeFragment extends Fragment {
 
     private Button btnReserve;

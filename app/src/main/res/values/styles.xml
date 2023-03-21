@@ -11,7 +11,7 @@
     <color name="backgroundColor">#FFFFFF</color>
 
     <!-- Color de texto principal -->
-    <color name="textColor">#000000</color>
+    <!--<color name="textColor">#000000</color>-->
 
     <!-- Estilos de botones -->
     <style name="BookingButtonStyle" parent="Widget.AppCompat.Button">
