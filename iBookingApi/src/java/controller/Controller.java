@@ -60,6 +60,12 @@ public class Controller {
         return trade;
 
     }
+    
+    /* public String login(User user) {
+        UserDAO usuarioDao = new UserDAO();
+        ArrayList<User> usuarios = usuarioDao.findAll(user);
+        return UserDAO.toObjectJSon(usuarios.get(0));
+    }*/
 
     /**
      * PUT method for updating or creating an instance of Controller
