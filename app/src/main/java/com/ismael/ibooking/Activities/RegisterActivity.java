@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ismael.ibooking.Api.APIUtils;
 import com.ismael.ibooking.Api.BookingAPI;
 import com.ismael.ibooking.R;
-import com.ismael.ibooking.User;
+import com.ismael.ibooking.Model.Pojo.User;
 
 import retrofit2.Call;
 import retrofit2.Callback;

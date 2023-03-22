@@ -1,8 +1,8 @@
-package com.ismael.ibooking;
+package com.ismael.ibooking.Model.Pojo;
 
 
 public class User {
-    private int id;
+    private int user_id ;
     private String name;
     private String lastName;
     private String email;
@@ -12,7 +12,7 @@ public class User {
     }
 
     public User(int id, String name, String lastName, String email, String password) {
-        this.id = id;
+        this.user_id  = id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
@@ -24,11 +24,11 @@ public class User {
     }
 
     public int getId() {
-        return id;
+        return user_id ;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.user_id  = id;
     }
 
     public String getName() {

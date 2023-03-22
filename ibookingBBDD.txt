@@ -1,0 +1,100 @@
+
+CREATE TABLE Location (
+   location_id INT PRIMARY KEY,
+   city VARCHAR(255),
+   country VARCHAR(255)
+);
+
+CREATE TABLE Users (
+   user_id INT PRIMARY KEY,
+   name VARCHAR(50),
+   lastName VARCHAR(75),
+   email VARCHAR(100),
+   password VARCHAR(20)
+);
+
+
+CREATE TABLE Hotel (
+   hotel_id INT PRIMARY KEY,
+   name VARCHAR(50),
+   description VARCHAR(255),
+   location_id INT,
+   rating INT,
+   FOREIGN KEY (location_id) REFERENCES Location(location_id)
+);
+
+CREATE TABLE Room (
+   room_id INT PRIMARY KEY,
+   hotel_id INT,
+   room_type VARCHAR(255),
+   price_per_night FLOAT,
+   availability BOOLEAN,
+   FOREIGN KEY (hotel_id) REFERENCES Hotel(hotel_id)
+);
+
+
+CREATE TABLE Reservation (
+   reservation_id INT PRIMARY KEY,
+   user_id INT,
+   hotel_id INT,
+   room_id INT,
+   check_in_date DATE,
+   check_out_date DATE,
+   FOREIGN KEY (user_id) REFERENCES User(user_id),
+   FOREIGN KEY (hotel_id) REFERENCES Hotel(hotel_id),
+   FOREIGN KEY (room_id) REFERENCES Room(room_id)
+);
+
+
+CREATE TABLE Comment (
+   comment_id INT PRIMARY KEY,
+   user_id INT,
+   hotel_id INT,
+   comment_text VARCHAR(255),
+   rating FLOAT,
+   FOREIGN KEY (user_id) REFERENCES User(user_id),
+   FOREIGN KEY (hotel_id) REFERENCES Hotel(hotel_id)
+);
+
+INSERT INTO Location (location_id, city, country) VALUES
+(1, 'Madrid', 'Spain'),
+(2, 'Barcelona', 'Spain'),
+(3, 'Paris', 'France'),
+(4, 'Berlin', 'Germany'),
+(5, 'Rome', 'Italy');
+
+INSERT INTO Users (user_id, name, lastName, email, password) VALUES
+(1, 'John', 'Smith', 'johnsmith@gmail.com', 'password123'),
+(2, 'Jane', 'Doe', 'janedoe@yahoo.com', 'qwerty123'),
+(3, 'Bob', 'Johnson', 'bob.johnson@hotmail.com', 'pass123'),
+(4, 'Alice', 'Williams', 'alice.williams@gmail.com', 'password123'),
+(5, 'Charlie', 'Brown', 'charlie.brown@yahoo.com', 'password123');
+
+INSERT INTO Hotel (hotel_id, name, description, location_id, rating) VALUES
+(1, 'Hotel Madrid', 'A luxurious hotel in the heart of Madrid', 1, 4),
+(2, 'Hotel Barcelona', 'A modern hotel located in Barcelona', 2, 4),
+(3, 'Hotel Paris', 'A charming hotel in the historic district of Paris', 3, 4),
+(4, 'Hotel Berlin', 'A stylish hotel in the trendy Mitte neighborhood of Berlin', 4, 4),
+(5, 'Hotel Rome', 'A classic hotel in the center of Rome', 4, 4);
+
+INSERT INTO Room (room_id, hotel_id, room_type, price_per_night, availability) 
+VALUES 
+(1, 1, 'Deluxe King', 300.00, true),
+(2, 1, 'Double Queen', 250.00, true),
+(3, 2, 'Standard Double', 200.00, true),
+(4, 2, 'Suite', 400.00, false),
+(5, 3, 'Twin Room', 180.00, true),
+(6, 3, 'King Room', 220.00, false);
+
+INSERT INTO Reservation (reservation_id, user_id, hotel_id, room_id, check_in_date, check_out_date) 
+VALUES 
+(1, 1, 1, 1, '2023-04-10', '2023-04-15'),
+(2, 2, 2, 3, '2023-05-20', '2023-05-23'),
+(3, 3, 3, 5, '2023-06-15', '2023-06-17');
+
+INSERT INTO Comment (comment_id, user_id, hotel_id, comment_text, rating) 
+VALUES 
+(1, 1, 1, 'Great hotel, amazing service!', 4.5),
+(2, 2, 2, 'The location was perfect, but the room was a bit small.', 3.0),
+(3, 3, 3, 'The staff was very helpful and friendly.', 4.0);
+

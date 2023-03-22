@@ -1,5 +1,15 @@
 package com.ismael.ibooking.Fragments;
 
+import android.os.Bundle;
+import android.widget.Toolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+
+import com.google.android.material.navigation.NavigationView;
+import com.ismael.ibooking.R;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
@@ -17,16 +27,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         // Asignar el NavigationView
-        navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        //navigationView = findViewById(R.id.navigation_view);
+        //navigationView.setNavigationItemSelectedListener(this);
 
         // Asignar el DrawerLayout y configurar el ActionBarDrawerToggle
-        drawerLayout = findViewById(R.id.drawer_layout);
+       /* drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
+        actionBarDrawerToggle.syncState();*/
 
         // Configurar el NavController
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);

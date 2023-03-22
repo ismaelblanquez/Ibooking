@@ -1,9 +1,8 @@
 package com.ismael.ibooking.Api;
 
 import com.ismael.ibooking.Model.Pojo.Hotel;
-import com.ismael.ibooking.Model.Pojo.Room;
-import com.ismael.ibooking.Reservation;
-import com.ismael.ibooking.User;
+import com.ismael.ibooking.Model.Pojo.Reservation;
+import com.ismael.ibooking.Model.Pojo.User;
 
 import java.util.List;
 

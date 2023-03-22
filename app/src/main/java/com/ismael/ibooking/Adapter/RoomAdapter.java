@@ -1,5 +1,17 @@
 package com.ismael.ibooking.Adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ismael.ibooking.R;
+
+import java.util.List;
+
 public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
 
     private List<Room> mRooms;

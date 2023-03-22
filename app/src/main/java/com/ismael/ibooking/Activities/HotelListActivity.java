@@ -1,4 +1,4 @@
-package com.ismael.ibooking.Model;
+package com.ismael.ibooking.Activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ismael.ibooking.Adapter.HotelAdapter;
+
 
 import com.ismael.ibooking.R;
 

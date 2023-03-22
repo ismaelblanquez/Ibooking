@@ -25,7 +25,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
     @NonNull
     @Override
     public HotelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_hotel, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_main, parent, false);
         return new HotelViewHolder(view);
     }
 

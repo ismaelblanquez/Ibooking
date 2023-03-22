@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/DAO/Helloworld.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/interfaces/IDAO.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/controller/ApiNetflix.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/interfaces/Action.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/DAO/PeliculaswsResource.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/utils/MotorMySQL.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/utils/ConnectionFactory.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/DAO/NetflixApi.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/DAO/PeliculaDAO.java</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/web/index.html</file>
+            <file>file:/D:/A/ANDROID/NetflixAPI/src/java/interfaces/IMotorSQL.java</file>
+        </group>
+    </open-files>
+</project-private>

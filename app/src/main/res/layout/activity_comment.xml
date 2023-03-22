@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/comment_title"
+
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -86,7 +87,8 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/comment_send_button"
                 android:textSize="16sp"
-                android:background="@drawable/button_background"
+                android:backgroundTint="@color/DodgerBlue"
+
                 android:onClick="sendComment"
                 android:style="@styles/BookingButtonStyle" />
 

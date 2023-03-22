@@ -1,4 +1,4 @@
-package com.ismael.ibooking;
+package com.ismael.ibooking.Model.Pojo;
 
 public class Comment {
     private int id;

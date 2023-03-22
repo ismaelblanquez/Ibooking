@@ -1,28 +1,14 @@
+package com.ismael.ibooking.Model.Pojo;
+
 public class Location {
-    private double latitude;
-    private double longitude;
-    private String address;
+    private int id;
     private String city;
     private String country;
 
-    public Location(double latitude, double longitude, String address, String city, String country) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.address = address;
+    public Location(String city, String country) {
+
         this.city = city;
         this.country = country;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public String getAddress() {
-        return address;
     }
 
     public String getCity() {

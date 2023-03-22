@@ -5,8 +5,8 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ismael.ibooking.R;
-import com.ismael.ibooking.Reservation;
-import com.ismael.ibooking.User;
+import com.ismael.ibooking.Model.Pojo.Reservation;
+import com.ismael.ibooking.Model.Pojo.User;
 
 import java.util.ArrayList;
 
@@ -24,8 +24,10 @@ public class HistoryActivity extends AppCompatActivity {
         ArrayList<Reservation> userReservations = User.getCurrentUser().getReservations();
 
         // Inicializar el ListView y el Adapter
-        historyListView = findViewById(R.id.history_listview);
+        historyListView = findViewById(R.id.history_list);
         historyAdapter = new HistoryAdapter(this, userReservations);
         historyListView.setAdapter(historyAdapter);
     }
+
+    //comment, hotel, location, reservation, room, user
 }
