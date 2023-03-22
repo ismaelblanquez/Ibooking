@@ -32,9 +32,9 @@ public class CommentDAO
             = "SELECT * FROM  `" + BBDD_CLASS_NAME + "` WHERE 1=1 ";
 
     private final String SQL_ADD
-            = "INSERT INTO `" + BBDD_CLASS_NAME + "` (`user_id`, `hotel_id`, `comment_text`, `rating`) VALUES ";
+            = "INSERT INTO `" + BBDD_CLASS_NAME + "` (`" + BBDD_CLASS_PARAM_2 + "`, `" + BBDD_CLASS_PARAM_3 + "`, `" + BBDD_CLASS_PARAM_4 + "`, `" + BBDD_CLASS_PARAM_5 + "`) VALUES ";
 
-    private final String SQL_DELETE = "DELETE FROM `" + BBDD_CLASS_NAME + "` WHERE comment_id=";
+    private final String SQL_DELETE = "DELETE FROM `" + BBDD_CLASS_NAME + "` WHERE " + BBDD_CLASS_PARAM_1 + "=";
 
     private final String SQL_UPDATE = "UPDATE `" + BBDD_CLASS_NAME + "` SET ";
 
@@ -178,7 +178,7 @@ public class CommentDAO
                     sql += "" + BBDD_CLASS_PARAM_5 + "='" + bean.getRating() + "', ";
                 }
 
-                sql += " WHERE `hotel_id`=" + bean.getId() + ";";
+                sql += " WHERE `" + BBDD_CLASS_PARAM_1 + "`=" + bean.getId() + ";";
                 System.out.println(sql);
                 resp = motorSql.execute(sql);
             }
