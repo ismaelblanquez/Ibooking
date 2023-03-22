@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/iBookingApi/nbproject/private/
+/iBookingApi/build/

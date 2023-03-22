@@ -7,7 +7,9 @@
     <!-- Barra de herramientas personalizada -->
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content" />
 
     <!-- Contenedor de la imagen del hotel -->
     <FrameLayout
