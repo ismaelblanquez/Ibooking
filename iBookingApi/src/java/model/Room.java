@@ -31,6 +31,10 @@ public class Room {
         this.availability = availability;
     }
 
+    public Room() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Integer getId() {
         return room_id;
     }

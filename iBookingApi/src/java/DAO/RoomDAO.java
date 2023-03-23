@@ -45,23 +45,28 @@ public class RoomDAO
     }
 
     @Override
-    public ArrayList<Room> findAll(Location bean) {
-        ArrayList<Location> locations = new ArrayList<>();
+    public ArrayList<Room> findAll(Room bean) {
+        ArrayList<Room> locations = new ArrayList<>();
         String sql = SQL_FINDALL;
         try {
             //1º) 
             motorSql.connect();
             if (bean != null) {
-                if (bean.getId() != 0) {
-                    sql += "AND " + BBDD_CLASS_PARAM_1 + "='" + bean.getId() + "'";
+                if (bean.getRoom_id() != null) {
+                    sql += "AND " + BBDD_CLASS_PARAM_1 + "='" + bean.getRoom_id() + "'";
                 }
-                if (bean.getCity() != null) {
-                    sql += "AND " + BBDD_CLASS_PARAM_2 + " LIKE('%" + bean.getCity() + "%')";
+                if (bean.getHotelId() != null) {
+                    sql += "AND " + BBDD_CLASS_PARAM_2 + " LIKE('%" + bean.getHotelId() + "%')";
                 }
-                if (bean.getCountry() != null) {
-                    sql += "AND " + BBDD_CLASS_PARAM_3 + " LIKE('%" + bean.getCountry() + "%')";
+                if (bean.getRoom_type() != null) {
+                    sql += "AND " + BBDD_CLASS_PARAM_3 + " LIKE('%" + bean.getRoom_type() + "%')";
                 }
-
+                if (bean.getPricePerNight()!= null) {
+                    sql += "AND " + BBDD_CLASS_PARAM_4 + "='" + bean.getPricePerNight()+ "'";
+                }
+                if (bean.getAvailability()!= null) {
+                    sql += "AND " + BBDD_CLASS_PARAM_5 + "='" + bean.getAvailability()+ "'";
+                }
             }
 
             System.out.println(sql);
@@ -69,12 +74,13 @@ public class RoomDAO
                     executeQuery(sql);
 
             while (rs.next()) {
-                Location location = new Location();
+                Room room = new Room();
 
-                location.setId(rs.getInt(1));
-                location.setCity(rs.getString(2));
-                location.setCountry(rs.getString(3));
-                locations.add(location);
+                room.setRoom_id(rs.getInt(1));
+                room.setHotelId(rs.getInt(2));
+                room.setRoom_type(rs.getString(3));
+                room.setPricePerNight(rs.getDouble(4));
+                room.setPricePerNight(rs.getDouble(5));
 
             }
         } catch (SQLException e) {
@@ -86,14 +92,16 @@ public class RoomDAO
     }
 
     @Override
-    public int add(Location bean) {
+    public int add(Room bean) {
         int resp = 0;
         try {
             motorSql.connect();
 
             String sql = SQL_ADD + "('"
-                    + bean.getCity() + "', '"
-                    + bean.getCountry() + "');";
+                    + bean.getHotelId()+ "', '"
+                    + bean.getRoom_type()+ "', '"
+                    + bean.getPricePerNight()+ "', '"
+                    + bean.getAvailability()+ "');";
 
 //                    + bean.getsPuntuacion() + "',"
 //                    + "CURRENT_DATE)";
@@ -138,7 +146,7 @@ public class RoomDAO
     }
 
     @Override
-    public int update(Location bean) {
+    public int update(Room bean) {
         int resp = 0;
         String sql;
         try {
@@ -149,15 +157,21 @@ public class RoomDAO
             } else {
 
                 sql = SQL_UPDATE;
-                if (bean.getCity() != null) {
-                    sql += "" + BBDD_CLASS_PARAM_2 + "='" + bean.getCity() + "'";
+                if (bean.getHotelId()!= null) {
+                    sql += "" + BBDD_CLASS_PARAM_2 + "='" + bean.getHotelId()+ "'";
                 }
 
-                if (bean.getCountry() != null) {
-                    sql += "" + BBDD_CLASS_PARAM_3 + "='" + bean.getCountry() + "'";
+                if (bean.getRoom_type()!= null) {
+                    sql += "" + BBDD_CLASS_PARAM_3 + "='" + bean.getRoom_type()+ "'";
+                }
+                if (bean.getPricePerNight()!= null) {
+                    sql += "" + BBDD_CLASS_PARAM_4 + "='" + bean.getPricePerNight()+ "'";
+                }
+                if (bean.getAvailability()!= null) {
+                    sql += "" + BBDD_CLASS_PARAM_5 + "='" + bean.getAvailability()+ "'";
                 }
 
-                sql += " WHERE `" + BBDD_CLASS_PARAM_1 + "`=" + bean.getId() + ";";
+                sql += " WHERE `" + BBDD_CLASS_PARAM_1 + "`=" + bean.getRoom_id()+ ";";
                 System.out.println(sql);
                 resp = motorSql.execute(sql);
             }
@@ -169,7 +183,7 @@ public class RoomDAO
         }
 
         if (resp > 0) {
-            System.out.println("Pelicula actualizada con éxito.");
+            System.out.println("Habitación actualizada con éxito.");
         } else {
             System.out.println("No se pudo actualizar.");
         }
@@ -178,7 +192,8 @@ public class RoomDAO
 
     public static void main(String[] args) {
         /*PRUEBAS UNITARIAS - TEST*/
-        LocationDAO location = new LocationDAO();
+        RoomDAO room = new RoomDAO();
+        System.out.println(room.findAll(null).toString());
 
         //Findall - filtra segun campos que no son null o 0
 //        ArrayList lstPeliculas

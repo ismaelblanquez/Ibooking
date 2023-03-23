@@ -44,7 +44,7 @@ public class UserDAO
     @Override
     public ArrayList<User> findAll(User bean) {
         ArrayList<User> users = new ArrayList<>();
-        String sql = SQL_FINDALL;
+         String sql = SQL_FINDALL;
         try {
             //1º) 
             motorSql.connect();

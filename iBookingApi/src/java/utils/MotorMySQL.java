@@ -21,7 +21,7 @@ public class MotorMySQL extends MotorSQL {
             = "jdbc:mysql://127.0.0.1/ibooking";
     
     private static final String CONTROLADOR
-            = "com.mysql.jdbc.Driver";
+            = "com.mysql.cj.jdbc.Driver";
     
     private static final String USER = "root";
     private static final String PASS = "";

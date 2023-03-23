@@ -6,21 +6,18 @@
 package controller;
 
 import DAO.HotelDAO;
+import DAO.RoomDAO;
 import DAO.UserDAO;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import java.util.ArrayList;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
-import model.Hotel;
-import model.User;
+import model.Room;
 
 /**
  * REST Web Service
@@ -34,17 +31,16 @@ public class Controller {
     private UriInfo context;
 
     /**
-     * Creates a new instance of Controller
+     * Creates a new instance of Controllers
      */
     public Controller() {
     }
 
     /**
-     * Retrieves representation of an instance of controller.Controller
-     *
+     * Retrieves representation of an instance of controller.Controllers
      * @return an instance of java.lang.String
      */
-    @GET
+   @GET
     @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
     public String getUsers() {
@@ -67,15 +63,20 @@ public class Controller {
         return trade;
 
     }
+   @GET
+    @Path("/rooms")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String buscarCine () {
+        RoomDAO roomDao = new RoomDAO();
+        Room room = new Room();
+        
+        ArrayList<Room> rooms = roomDao.findAll(room);
+        return Room.toArrayJSon(rooms);
+    }
 
-    /* public String login(User user) {
-        UserDAO usuarioDao = new UserDAO();
-        ArrayList<User> usuarios = usuarioDao.findAll(user);
-        return UserDAO.toObjectJSon(usuarios.get(0));
-    }*/
     /**
-     * PUT method for updating or creating an instance of Controller
-     *
+     * PUT method for updating or creating an instance of Controllers
      * @param content representation for the resource
      */
     @PUT
