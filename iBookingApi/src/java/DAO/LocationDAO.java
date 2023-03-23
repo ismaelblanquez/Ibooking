@@ -176,7 +176,7 @@ public class LocationDAO
 
     public static void main(String[] args) {
         /*PRUEBAS UNITARIAS - TEST*/
-        CommentDAO comment = new CommentDAO();
+        LocationDAO location = new LocationDAO();
 
         //Findall - filtra segun campos que no son null o 0
 //        ArrayList lstPeliculas

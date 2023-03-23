@@ -45,28 +45,34 @@ public class Controller {
      * @return an instance of java.lang.String
      */
     @GET
-    @Path("hoteles")
+    @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
-    public JsonArray getJson() {
+    public String getUsers() {
 
         UserDAO userDao = new UserDAO();
-        ArrayList<User> users = userDao.findAll(null);
-        String resp = User.toArrayJSon(users);
-        JsonParser parser = new JsonParser();
-        JsonElement tradeElement = parser.parse(resp);
-        JsonArray trade = tradeElement.getAsJsonArray();
-        System.out.println("He llegado a hoteles y te mando:");
-        System.out.println(trade);
+        String trade = userDao.findAll(null).toString();
+
         return trade;
 
     }
-    
+
+    @GET
+    @Path("/hotels")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getHotels() {
+
+        HotelDAO hotelDao = new HotelDAO();
+        String trade = hotelDao.findAll(null).toString();
+
+        return trade;
+
+    }
+
     /* public String login(User user) {
         UserDAO usuarioDao = new UserDAO();
         ArrayList<User> usuarios = usuarioDao.findAll(user);
         return UserDAO.toObjectJSon(usuarios.get(0));
     }*/
-
     /**
      * PUT method for updating or creating an instance of Controller
      *

@@ -14,7 +14,8 @@ import java.util.ArrayList;
  * @author Ismael
  */
 public class User {
-    private int user_id ;
+
+    private int user_id;
     private String name;
     private String lastName;
     private String email;
@@ -24,7 +25,7 @@ public class User {
     }
 
     public User(int id, String name, String lastName, String email, String password) {
-        this.user_id  = id;
+        this.user_id = id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
@@ -36,11 +37,11 @@ public class User {
     }
 
     public int getId() {
-        return user_id ;
+        return user_id;
     }
 
     public void setId(int id) {
-        this.user_id  = id;
+        this.user_id = id;
     }
 
     public String getName() {
@@ -87,24 +88,26 @@ public class User {
     public String toString() {
         return "User{" + "user_id=" + user_id + ", name=" + name + ", lastName=" + lastName + ", email=" + email + ", password=" + password + '}';
     }
-    public static String 
-        toArrayJSon(ArrayList<User> users) {
-            GsonBuilder builder = new GsonBuilder(); 
-            builder.setPrettyPrinting();
 
-            Gson gson = builder.create();
-            String resp = gson.toJson(users);
-            
-            return resp;
+    public static String
+            toArrayJSon(ArrayList<User> users) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(users);
+
+        return resp;
     }
-         public static String
-        toObjectJSon(User user) {
-            GsonBuilder builder = new GsonBuilder();
-            builder.setPrettyPrinting();
 
-            Gson gson = builder.create();
-            String resp = gson.toJson(user);
-           
-            return resp;
+    public static String
+            toObjectJSon(User user) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(user);
+
+        return resp;
     }
 }

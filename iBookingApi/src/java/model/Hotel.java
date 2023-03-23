@@ -15,6 +15,7 @@ import java.util.List;
  * @author Ismael
  */
 public class Hotel {
+
     private int hotel_id;
     private String name;
     private String description;
@@ -25,8 +26,6 @@ public class Hotel {
 
     public Hotel() {
     }
-    
-    
 
     public Hotel(String name, String description, int rating, double pricePerNight, int location, List<Room> rooms) {
         this.name = name;
@@ -97,15 +96,26 @@ public class Hotel {
     public String toString() {
         return "Hotel{" + "name=" + name + ", description=" + description + ", rating=" + rating + ", pricePerNight=" + pricePerNight + ", location=" + location + ", rooms=" + rooms + '}';
     }
-    
-    public static String 
-        toArrayJSon(ArrayList<Hotel> hotels) {
-            GsonBuilder builder = new GsonBuilder(); 
-            builder.setPrettyPrinting();
 
-            Gson gson = builder.create();
-            String resp = gson.toJson(hotels);
-            
-            return resp;
+    public static String
+            toArrayJSon(ArrayList<Hotel> hotels) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(hotels);
+
+        return resp;
+    }
+
+    public static String
+            toObjectJSon(User user) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(user);
+
+        return resp;
     }
 }

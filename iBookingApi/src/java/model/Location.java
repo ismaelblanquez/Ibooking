@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * @author Ismael
  */
 public class Location {
+
     private int id;
     private String city;
     private String country;
@@ -22,6 +23,10 @@ public class Location {
 
         this.city = city;
         this.country = country;
+    }
+
+    public Location() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getCity() {
@@ -52,15 +57,26 @@ public class Location {
     public String toString() {
         return "Location{" + "id=" + id + ", city=" + city + ", country=" + country + '}';
     }
-    
-    public static String 
-        toArrayJSon(ArrayList<Location> locations) {
-            GsonBuilder builder = new GsonBuilder(); 
-            builder.setPrettyPrinting();
 
-            Gson gson = builder.create();
-            String resp = gson.toJson(locations);
-            
-            return resp;
+    public static String
+            toArrayJSon(ArrayList<Location> locations) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(locations);
+
+        return resp;
+    }
+
+    public static String
+            toObjectJSon(User user) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(user);
+
+        return resp;
     }
 }

@@ -26,14 +26,14 @@ public class UserDAO
         implements IDAO<User, Integer> {
 
     private final String SQL_FINDALL
-            = "SELECT * FROM `user` WHERE 1=1 ";
+            = "SELECT * FROM `users` WHERE 1=1 ";
 
     private final String SQL_ADD
-            = "INSERT INTO `user` (`name`, `lastName`, `email`, `password`) VALUES ";
+            = "INSERT INTO `users` (`name`, `lastName`, `email`, `password`) VALUES ";
 
     private final String SQL_DELETE = "DELETE FROM `users` WHERE user_id=";
 
-    private final String SQL_UPDATE = "UPDATE `user` SET ";
+    private final String SQL_UPDATE = "UPDATE `users` SET ";
 
     private MotorSQL motorSql;
 
@@ -199,6 +199,8 @@ public class UserDAO
     public static void main(String[] args) {
         /*PRUEBAS UNITARIAS - TEST*/
         UserDAO user = new UserDAO();
+        
+        System.out.println(user.findAll(null).toString());
 
         //Findall - filtra segun campos que no son null o 0
 //        ArrayList lstPeliculas

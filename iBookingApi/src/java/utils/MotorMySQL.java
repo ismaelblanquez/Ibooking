@@ -18,7 +18,7 @@ public class MotorMySQL extends MotorSQL {
     private ResultSet rs;
 // ¿Dónde está la Base de Datos?
     private static final String URL
-            = "jdbc:mysql://127.0.0.1/iBooking";
+            = "jdbc:mysql://127.0.0.1/ibooking";
     
     private static final String CONTROLADOR
             = "com.mysql.jdbc.Driver";

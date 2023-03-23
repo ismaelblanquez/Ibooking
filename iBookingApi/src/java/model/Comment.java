@@ -94,4 +94,15 @@ public class Comment {
 
         return resp;
     }
+
+    public static String
+            toObjectJSon(User user) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+
+        Gson gson = builder.create();
+        String resp = gson.toJson(user);
+
+        return resp;
+    }
 }
