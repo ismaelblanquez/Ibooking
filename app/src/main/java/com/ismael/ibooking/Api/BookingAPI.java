@@ -1,7 +1,10 @@
 package com.ismael.ibooking.Api;
 
+import com.ismael.ibooking.Model.Pojo.Comment;
 import com.ismael.ibooking.Model.Pojo.Hotel;
+import com.ismael.ibooking.Model.Pojo.Location;
 import com.ismael.ibooking.Model.Pojo.Reservation;
+import com.ismael.ibooking.Model.Pojo.Room;
 import com.ismael.ibooking.Model.Pojo.User;
 
 import java.util.List;
@@ -19,17 +22,18 @@ public interface BookingAPI {
     @GET("hotels")
     Call<List<Hotel>> getHotels();
 
-    @GET("hotels/{id}")
-    Call<Hotel> getHotelById(@Path("id") int id);
+    @GET("rooms")
+    Call<List<Room>> getRooms();
 
-    @GET("hotels/{id}/rooms")
-    Call<List<Room>> getRoomsByHotelId(@Path("id") int id);
+    @GET("locations")
+    Call<List<Location>> getLocation();
 
-    @GET("rooms/{id}")
-    Call<Room> getRoomById(@Path("id") int id);
+    @GET("comments")
+    Call<List<Comment>> getComment();
+    @GET("reservations")
+    Call<List<Reservation>> getReservation();
 
-    @GET("rooms/{id}/reservations")
-    Call<List<Reservation>> getReservationsByRoomId(@Path("id") int id);
+
 
     @POST("reservations")
     Call<Reservation> createReservation(@Body Reservation reservation);
