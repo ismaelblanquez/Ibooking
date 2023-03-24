@@ -20,20 +20,19 @@ public class Hotel {
     private String name;
     private String description;
     private int rating;
-    private double pricePerNight;
     private int location;
-    private List<Room> rooms;
+    //private List<Room> rooms;
 
     public Hotel() {
     }
 
-    public Hotel(String name, String description, int rating, double pricePerNight, int location, List<Room> rooms) {
+    public Hotel(String name, String description, int rating, int location) {
         this.name = name;
         this.description = description;
         this.rating = rating;
-        this.pricePerNight = pricePerNight;
+        
         this.location = location;
-        this.rooms = rooms;
+       
     }
 
     public String getName() {
@@ -56,17 +55,13 @@ public class Hotel {
         return rating;
     }
 
-    public double getPricePerNight() {
-        return pricePerNight;
-    }
+ 
 
     public int getLocation() {
         return location;
     }
 
-    public List<Room> getRooms() {
-        return rooms;
-    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -80,21 +75,17 @@ public class Hotel {
         this.rating = rating;
     }
 
-    public void setPricePerNight(double pricePerNight) {
-        this.pricePerNight = pricePerNight;
-    }
+ 
 
     public void setLocation(int location) {
         this.location = location;
     }
 
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
-    }
+  
 
     @Override
     public String toString() {
-        return "Hotel{" + "name=" + name + ", description=" + description + ", rating=" + rating + ", pricePerNight=" + pricePerNight + ", location=" + location + ", rooms=" + rooms + '}';
+        return "Hotel{" + "name=" + name + ", description=" + description + ", rating=" + rating + ", location=" + location + '}';
     }
 
     public static String
@@ -109,12 +100,12 @@ public class Hotel {
     }
 
     public static String
-            toObjectJSon(User user) {
+            toObjectJSon(Hotel hotel) {
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
 
         Gson gson = builder.create();
-        String resp = gson.toJson(user);
+        String resp = gson.toJson(hotel);
 
         return resp;
     }

@@ -18,21 +18,19 @@ public class Room {
     private Integer room_id;
     private Integer hotelId;
     private String room_type;
-    private String description;
     private Double pricePerNight;
     private Boolean availability;
 
-    public Room(Integer id, Integer hotelId, String type, String description, Double pricePerNight, boolean availability) {
+    public Room(Integer id, Integer hotelId, String type, Double pricePerNight, boolean availability) {
         this.room_id = id;
         this.hotelId = hotelId;
         this.room_type = type;
-        this.description = description;
         this.pricePerNight = pricePerNight;
         this.availability = availability;
     }
 
     public Room() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     public Integer getId() {
@@ -57,14 +55,6 @@ public class Room {
 
     public void setType(String type) {
         this.room_type = type;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Double getPricePerNight() {
@@ -101,21 +91,21 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" + "room_id=" + room_id + ", hotelId=" + hotelId + ", room_type=" + room_type + ", description=" + description + ", pricePerNight=" + pricePerNight + ", availability=" + availability + '}';
+        return "Room{" + "room_id=" + room_id + ", hotelId=" + hotelId + ", room_type=" + room_type + ", pricePerNight=" + pricePerNight + ", availability=" + availability + '}';
     }
 
-    public static String 
-        toArrayJSon(ArrayList<Room> rooms) {
-            GsonBuilder builder = new GsonBuilder(); 
-            builder.setPrettyPrinting();
+    public static String
+            toArrayJSon(ArrayList<Room> rooms) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
 
-            Gson gson = builder.create();
-            String resp = gson.toJson(rooms);
-            
-            return resp;
+        Gson gson = builder.create();
+        String resp = gson.toJson(rooms);
+
+        return resp;
     }
-        
-        public static String
+
+    public static String
             toObjectJSon(User user) {
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();

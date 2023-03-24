@@ -46,7 +46,7 @@ public class RoomDAO
 
     @Override
     public ArrayList<Room> findAll(Room bean) {
-        ArrayList<Room> locations = new ArrayList<>();
+        ArrayList<Room> rooms = new ArrayList<>();
         String sql = SQL_FINDALL;
         try {
             //1º) 
@@ -80,15 +80,16 @@ public class RoomDAO
                 room.setHotelId(rs.getInt(2));
                 room.setRoom_type(rs.getString(3));
                 room.setPricePerNight(rs.getDouble(4));
-                room.setPricePerNight(rs.getDouble(5));
-
+                room.setAvailability(rs.getBoolean(5));
+                rooms.add(room);
+                
             }
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
             motorSql.disconnect();
         }
-        return locations;
+        return rooms;
     }
 
     @Override
