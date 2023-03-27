@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-03-2023 a las 11:52:25
+-- Tiempo de generación: 27-03-2023 a las 08:08:33
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,17 @@ CREATE TABLE `comment` (
 INSERT INTO `comment` (`comment_id`, `user_id`, `hotel_id`, `comment_text`, `rating`) VALUES
 (1, 1, 1, 'Great hotel, amazing service!', 4.5),
 (2, 2, 2, 'The location was perfect, but the room was a bit small.', 3),
-(3, 3, 3, 'The staff was very helpful and friendly.', 4);
+(3, 3, 3, 'The staff was very helpful and friendly.', 4),
+(4, 4, 4, 'I loved my stay here, highly recommend!', 4.8),
+(5, 5, 1, 'The location was great and the staff was very friendly.', 3.5),
+(6, 2, 5, 'Beautiful hotel, but the room was a bit too small for my liking.', 4),
+(7, 3, 2, 'The hotel was clean and comfortable, but the breakfast was not very good.', 3.2),
+(8, 1, 3, 'Lovely hotel with great views of the city.', 4.5),
+(9, 5, 4, 'The room was spacious and well-appointed, but the wifi was slow.', 3.7),
+(10, 3, 1, 'The hotel was amazing, but the price was a bit steep.', 4.2),
+(11, 4, 3, 'Great hotel with friendly staff and comfortable rooms.', 4),
+(12, 1, 5, 'I had a great time at this hotel, would definitely stay again!', 4.5),
+(13, 2, 4, 'The hotel was lovely and well-located, but the room was a bit noisy.', 3.8);
 
 -- --------------------------------------------------------
 
@@ -67,7 +77,17 @@ INSERT INTO `hotel` (`hotel_id`, `name`, `description`, `location_id`, `rating`)
 (2, 'Hotel Barcelona', 'A modern hotel located in Barcelona', 2, 4),
 (3, 'Hotel Paris', 'A charming hotel in the historic district of Paris', 3, 4),
 (4, 'Hotel Berlin', 'A stylish hotel in the trendy Mitte neighborhood of Berlin', 4, 4),
-(5, 'Hotel Rome', 'A classic hotel in the center of Rome', 4, 4);
+(5, 'Hotel Rome', 'A classic hotel in the center of Rome', 4, 4),
+(6, 'Grand Hotel', 'A classic hotel in the heart of London', 6, 4),
+(7, 'Hotel New York', 'A modern hotel located in Times Square', 7, 4),
+(8, 'Hotel Tokyo', 'A luxurious hotel in the heart of Tokyo', 8, 4),
+(9, 'Hotel Sydney', 'A charming hotel in the historic district of Sydney', 9, 4),
+(10, 'Hotel Rio de Janeiro', 'A stylish hotel in the Copacabana beach', 10, 4),
+(11, 'Hotel Dubai', 'A classic hotel in the center of Dubai', 11, 4),
+(12, 'Hotel Moscow', 'A modern hotel located in the center of Moscow', 12, 4),
+(13, 'Hotel Amsterdam', 'A luxurious hotel in the canal district of Amsterdam', 13, 4),
+(14, 'Hotel Toronto', 'A charming hotel in the heart of Toronto', 14, 4),
+(15, 'Hotel Bangkok', 'A stylish hotel in the center of Bangkok', 15, 4);
 
 -- --------------------------------------------------------
 
@@ -90,7 +110,17 @@ INSERT INTO `location` (`location_id`, `city`, `country`) VALUES
 (2, 'Barcelona', 'Spain'),
 (3, 'Paris', 'France'),
 (4, 'Berlin', 'Germany'),
-(5, 'Rome', 'Italy');
+(5, 'Rome', 'Italy'),
+(6, 'New York', 'United States'),
+(7, 'Tokyo', 'Japan'),
+(8, 'London', 'United Kingdom'),
+(9, 'Sydney', 'Australia'),
+(10, 'Amsterdam', 'Netherlands'),
+(11, 'Hong Kong', 'China'),
+(12, 'Dubai', 'United Arab Emirates'),
+(13, 'Rio de Janeiro', 'Brazil'),
+(14, 'Cape Town', 'South Africa'),
+(15, 'Vancouver', 'Canada');
 
 -- --------------------------------------------------------
 
@@ -114,7 +144,17 @@ CREATE TABLE `reservation` (
 INSERT INTO `reservation` (`reservation_id`, `user_id`, `hotel_id`, `room_id`, `check_in_date`, `check_out_date`) VALUES
 (1, 1, 1, 1, '2023-04-10', '2023-04-15'),
 (2, 2, 2, 3, '2023-05-20', '2023-05-23'),
-(3, 3, 3, 5, '2023-06-15', '2023-06-17');
+(3, 3, 3, 5, '2023-06-15', '2023-06-17'),
+(4, 4, 4, 4, '2023-07-12', '2023-07-18'),
+(5, 5, 5, 5, '2023-08-22', '2023-08-25'),
+(6, 1, 3, 5, '2023-09-05', '2023-09-10'),
+(7, 2, 4, 6, '2023-10-20', '2023-10-25'),
+(8, 3, 2, 3, '2023-11-10', '2023-11-15'),
+(9, 4, 1, 2, '2023-12-05', '2023-12-10'),
+(10, 5, 3, 6, '2024-01-15', '2024-01-20'),
+(11, 1, 2, 4, '2024-02-05', '2024-02-10'),
+(12, 2, 5, 5, '2024-03-10', '2024-03-15'),
+(13, 3, 1, 1, '2024-04-15', '2024-04-20');
 
 -- --------------------------------------------------------
 
@@ -140,7 +180,17 @@ INSERT INTO `room` (`room_id`, `hotel_id`, `room_type`, `price_per_night`, `avai
 (3, 2, 'Standard Double', 200, 1),
 (4, 2, 'Suite', 400, 0),
 (5, 3, 'Twin Room', 180, 1),
-(6, 3, 'King Room', 220, 0);
+(6, 3, 'King Room', 220, 0),
+(7, 1, 'Double Queen', 250, 1),
+(8, 1, 'Executive Suite', 500, 0),
+(9, 1, 'Twin Room', 220, 1),
+(10, 2, 'Deluxe King', 350, 1),
+(11, 2, 'Standard Double', 200, 1),
+(12, 2, 'Junior Suite', 450, 0),
+(13, 3, 'Single Room', 150, 1),
+(14, 3, 'Superior Twin', 200, 1),
+(15, 4, 'Superior King', 400, 0),
+(16, 5, 'Classic Double', 220, 1);
 
 -- --------------------------------------------------------
 
