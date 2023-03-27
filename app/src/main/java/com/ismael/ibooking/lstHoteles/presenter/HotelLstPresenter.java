@@ -3,7 +3,6 @@ package com.ismael.ibooking.lstHoteles.presenter;
 import com.ismael.ibooking.entities.Hotel;
 
 import com.ismael.ibooking.lstHoteles.model.LstHotelsModel;
-import com.ismael.ibooking.lstHoteles.view.Hotel_View;
 import com.ismael.ibooking.lstHoteles.view.LstHotelsContract;
 
 import java.util.List;

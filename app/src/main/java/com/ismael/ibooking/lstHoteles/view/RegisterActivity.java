@@ -1,4 +1,4 @@
-package com.ismael.ibooking.activities;
+package com.ismael.ibooking.lstHoteles.view;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

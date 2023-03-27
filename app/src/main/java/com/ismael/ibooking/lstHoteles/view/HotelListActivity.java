@@ -1,4 +1,4 @@
-package com.ismael.ibooking.activities;
+package com.ismael.ibooking.lstHoteles.view;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -32,12 +32,12 @@ public class HotelListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //hotels traera la lista de hoteles del api
 
-        adapter = new HotelAdapter(hotels ,this);
+        adapter = new HotelAdapter(hotels ,getApplicationContext());
         recyclerView.setAdapter(adapter);
     }
 
     private void updateHotels(List<Hotel> hotels) {
-        adapter.hotels = hotels;
+        hotels.addAll(hotels);
         adapter.notifyDataSetChanged();
     }
 }

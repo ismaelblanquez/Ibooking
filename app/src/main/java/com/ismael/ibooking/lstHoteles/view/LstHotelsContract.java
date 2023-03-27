@@ -2,7 +2,6 @@ package com.ismael.ibooking.lstHoteles.view;
 
 import com.ismael.ibooking.entities.Hotel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

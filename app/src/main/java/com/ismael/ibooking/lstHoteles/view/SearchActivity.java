@@ -1,4 +1,4 @@
-package com.ismael.ibooking.activities;
+package com.ismael.ibooking.lstHoteles.view;
 
 import android.content.Intent;
 import android.os.Bundle;

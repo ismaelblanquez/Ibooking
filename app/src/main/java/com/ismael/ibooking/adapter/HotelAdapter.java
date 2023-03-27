@@ -1,5 +1,6 @@
 package com.ismael.ibooking.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +19,11 @@ import java.util.List;
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHolder> {
 
     private List<Hotel> hotels;
-    private OnHotelClickListener onHotelClickListener;
+    private Context context;
 
-    public HotelAdapter(List<Hotel> hotels, OnHotelClickListener onHotelClickListener) {
+    public HotelAdapter(List<Hotel> hotels, Context context) {
         this.hotels = hotels;
-        this.onHotelClickListener = onHotelClickListener;
+        this.context = context;
     }
 
     @NonNull
