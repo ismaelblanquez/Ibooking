@@ -2,7 +2,7 @@ package com.ismael.ibooking.lstHoteles.model;
 
 import com.google.gson.Gson;
 import com.ismael.ibooking.entities.Hotel;
-import com.ismael.ibooking.lstHoteles.view.LstHotelsContract;
+import com.ismael.ibooking.lstHoteles.LstHotelsContract;
 import com.ismael.ibooking.utils.APIUtils;
 import com.ismael.ibooking.utils.BookingAPI;
 import java.util.List;

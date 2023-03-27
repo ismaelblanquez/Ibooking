@@ -88,7 +88,6 @@
                 android:text="@string/comment_send_button"
                 android:textSize="16sp"
                 android:backgroundTint="@color/DodgerBlue"
-
                 android:onClick="sendComment"
                 android:style="@styles/BookingButtonStyle" />
 

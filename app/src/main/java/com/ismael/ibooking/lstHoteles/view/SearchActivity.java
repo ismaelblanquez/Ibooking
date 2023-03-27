@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ismael.ibooking.adapter.HotelAdapter;
 import com.ismael.ibooking.utils.APIUtils;
-import com.ismael.ibooking.utils.BookingAPI;
 import com.ismael.ibooking.entities.Hotel;
 import com.ismael.ibooking.R;
 
@@ -22,6 +21,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class SearchActivity extends AppCompatActivity implements HotelAdapter.ItemClickListener {
     private EditText etSearch;
@@ -63,7 +63,7 @@ public class SearchActivity extends AppCompatActivity implements HotelAdapter.It
         hotels.clear();
         adapter.notifyDataSetChanged();
 
-        BookingAPI bookingAPI = APIUtils.getBookingAPI();
+        Retrofit bookingAPI = APIUtils.getBookingAPI();
         Call<List<Hotel>> call = bookingAPI.searchHotels(query);
         call.enqueue(new Callback<List<Hotel>>() {
             @Override
@@ -85,8 +85,8 @@ public class SearchActivity extends AppCompatActivity implements HotelAdapter.It
 
     @Override
     public void onItemClick(View view, int position) {
-        Intent intent = new Intent(this, HotelActivity.class);
-        intent.putExtra("hotel_id", hotels.get(position).getId());
+        Intent intent = new Intent(this, HotelListActivity.class);
+        intent.putExtra("hotel_id", hotels.get(position).getHotel_id());
         startActivity(intent);
     }
 }

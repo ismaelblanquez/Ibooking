@@ -24,8 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText etName, etLastName, etEmail, etPassword, etConfirmPassword;
     Button btnRegister;
     TextView tvLogin;
-    ProgressDialog progressDialog;
-    BookingAPI bookingAPI;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         etConfirmPassword = findViewById(R.id.et_confirm_password);
         btnRegister = findViewById(R.id.btn_register);
         tvLogin = findViewById(R.id.tv_login);
-        progressDialog = new ProgressDialog(this);
-        bookingAPI = APIUtils.getBookingAPI();
+
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,14 +61,13 @@ public class RegisterActivity extends AppCompatActivity {
 
                 User user = new User(name, lastName, email, password);
 
-                progressDialog.setMessage("Registrando...");
-                progressDialog.show();
 
-                Call<Void> call = bookingAPI.createUser(user);
+
+                Call<Void> call = BookingAPI.createUser(user);
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
-                        progressDialog.dismiss();
+
                         if (response.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
@@ -82,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
-                        progressDialog.dismiss();
+
                         Toast.makeText(RegisterActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });

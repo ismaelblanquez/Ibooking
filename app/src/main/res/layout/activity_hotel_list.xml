@@ -22,7 +22,7 @@
         android:clipToPadding="false"
         android:padding="16dp"
         android:scrollbars="vertical"
-        android:visibility="gone" />
+        />
 
     <!-- Mensaje de carga -->
     <TextView

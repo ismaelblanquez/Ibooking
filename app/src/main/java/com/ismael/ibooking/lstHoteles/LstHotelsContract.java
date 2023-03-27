@@ -1,4 +1,4 @@
-package com.ismael.ibooking.lstHoteles.view;
+package com.ismael.ibooking.lstHoteles;
 
 import com.ismael.ibooking.entities.Hotel;
 
@@ -21,7 +21,7 @@ public interface LstHotelsContract {
                     void  onSuccess(List<Hotel> index);
                     void  onFailure(String error);
                 }
-                void lstHotelesWS(Hotel hotel, LstHotelsContract.Model.OnLstHotelsListener onLstPeliculasListener);
+                void lstHotelesWS(Hotel hotel, LstHotelsContract.Model.OnLstHotelsListener onLstHotelsListener);
 
             }
 

@@ -35,7 +35,7 @@ public class ReservationActivity extends AppCompatActivity {
                 // Do something with name and date, like save them to a database
 
                 // Show a confirmation message to the user
-                Toast.makeText(ReservationActivity.this, "Reservation confirmed for " + name + " on " + date, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReservationActivity.this, "Reserva confirmada " + name + " en " + date, Toast.LENGTH_SHORT).show();
             }
         });
     }

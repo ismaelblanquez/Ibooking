@@ -2,6 +2,7 @@ package com.ismael.ibooking.utils;
 
 import com.ismael.ibooking.entities.Comment;
 import com.ismael.ibooking.entities.Hotel;
+import com.ismael.ibooking.entities.Index;
 import com.ismael.ibooking.entities.Location;
 import com.ismael.ibooking.entities.Reservation;
 import com.ismael.ibooking.entities.Room;
@@ -45,7 +46,7 @@ public interface BookingAPI {
     @DELETE("reservations/{id}")
     Call<Void> deleteReservation(@Path("id") int id);
 
-    Call<Void> createUser(User user);
+    static Call<Void> createUser(User user);
 
 
 

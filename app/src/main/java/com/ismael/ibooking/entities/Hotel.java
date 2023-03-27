@@ -16,6 +16,8 @@ public class Hotel {
     @SerializedName("rating")
     private int rating;
 
+    @SerializedName("image_url")
+    private String image_url;
     public Hotel(String name, String description, int rating, Location location) {
         this.name = name;
         this.description = description;
@@ -30,6 +32,14 @@ public class Hotel {
 
     public int getHotel_id() {
         return hotel_id;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 
     public void setHotel_id(int hotel_id) {

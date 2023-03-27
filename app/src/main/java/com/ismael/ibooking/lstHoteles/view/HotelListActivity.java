@@ -12,32 +12,49 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ismael.ibooking.R;
 import com.ismael.ibooking.adapter.HotelAdapter;
 import com.ismael.ibooking.entities.Hotel;
+import com.ismael.ibooking.lstHoteles.LstHotelsContract;
+import com.ismael.ibooking.lstHoteles.model.LstHotelsModel;
+import com.ismael.ibooking.lstHoteles.presenter.LstHotelsPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HotelListActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private HotelAdapter adapter;
-    List<Hotel> hotels = new ArrayList<>();
-    @SuppressLint("MissingInflatedId")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public class HotelListActivity extends AppCompatActivity implements LstHotelsContract.View {
 
-        recyclerView = findViewById(R.id.hotelsRecyclerView);
+        private RecyclerView recyclerView;
+        private HotelAdapter adapter;
+        private LstHotelsPresenter presenter;
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //hotels traera la lista de hoteles del api
+        @SuppressLint("MissingInflatedId")
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
 
-        adapter = new HotelAdapter(hotels ,getApplicationContext());
-        recyclerView.setAdapter(adapter);
+            recyclerView = findViewById(R.id.hotelsRecyclerView);
+
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+            adapter = new HotelAdapter(new ArrayList<>(), getApplicationContext());
+            recyclerView.setAdapter(adapter);
+
+            presenter = new LstHotelsPresenter(this);
+            presenter.lstHotels();
+        }
+
+
+
+
+        @Override
+        public void successLstHotels(List<Hotel> lstHotel) {
+            adapter.setHotels(lstHotel);
+        }
+
+        @Override
+        public void failureLstHotels(String err) {
+
+        }
     }
 
-    private void updateHotels(List<Hotel> hotels) {
-        hotels.addAll(hotels);
-        adapter.notifyDataSetChanged();
-    }
-}
+

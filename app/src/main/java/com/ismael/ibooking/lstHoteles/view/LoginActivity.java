@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.common.util.SharedPreferencesUtils;
 import com.ismael.ibooking.utils.APIUtils;
 import com.ismael.ibooking.utils.BookingAPI;
-import com.ismael.ibooking.fragments.MainActivity;
 import com.ismael.ibooking.R;
 import com.ismael.ibooking.entities.User;
 
@@ -36,9 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.login_email);
         passwordEditText = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
-       // registerButton = findViewById(R.id.btn_register);
+        registerButton = findViewById(R.id.btn_register);
 
-        bookingAPI = APIUtils.getBookingAPI(BookingAPI);
+
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +47,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
                     loginUser(email, password);
+                    Intent screenChanger = new Intent(getBaseContext(),
+                            InicioActivity.class
+                    );
+                    startActivity(screenChanger);
                 } else {
                     Toast.makeText(LoginActivity.this, "Por favor ingresa tus credenciales de inicio de sesión", Toast.LENGTH_SHORT).show();
                 }
