@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ismael.ibooking.adapter.HotelAdapter;
 import com.ismael.ibooking.utils.APIUtils;
 import com.ismael.ibooking.utils.BookingAPI;
 import com.ismael.ibooking.entities.Hotel;

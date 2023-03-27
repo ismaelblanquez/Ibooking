@@ -20,6 +20,7 @@ CREATE TABLE Hotel (
    description VARCHAR(255),
    location_id INT,
    rating INT,
+   image_url VARCHAR(255),
    FOREIGN KEY (location_id) REFERENCES Location(location_id)
 );
 

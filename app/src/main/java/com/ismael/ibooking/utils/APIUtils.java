@@ -17,11 +17,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class APIUtils {
 
 
-    public static final String BASE_URL = "http://localhost:8080/api/";
+    public static final String BASE_URL = "http://192.168.104.52:8080/api/";
 
     private  static Retrofit retrofit = null;
 
-    public static Retrofit getAll() {
+    public static Retrofit getBookingAPI() {
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Asignar la toolbar como ActionBar
+       /* // Asignar la toolbar como ActionBar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();*/
+        actionBarDrawerToggle.syncState();
 
         // Configurar el NavController
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -45,13 +45,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // Configurar el NavigationUI para el botón de retroceso
-    @Override
+    /*@Override
     public boolean onSupportNavigateUp() {
         return NavigationUI.navigateUp(navController, drawerLayout) || super.onSupportNavigateUp();
-    }
+    }*/
 
     // Configurar el NavigationView para cerrar el DrawerLayout al hacer clic en un elemento
-    @Override
+  /* @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         item.setChecked(true);
         drawerLayout.closeDrawers();
@@ -74,6 +74,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
 
-        return true;
+        return true;*/
     }
 }
