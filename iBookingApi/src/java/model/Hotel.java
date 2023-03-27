@@ -95,7 +95,8 @@ public class Hotel {
 
         Gson gson = builder.create();
         String resp = gson.toJson(hotels);
-
+        resp += "{\"data\":" + resp;
+        resp += "}";
         return resp;
     }
 
